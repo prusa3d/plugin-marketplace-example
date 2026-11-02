@@ -1,9 +1,6 @@
 # Security
 
-Please report a vulnerability privately, through GitHub's
-[private vulnerability reporting](https://github.com/prusa3d/plugin-marketplace-example/security/advisories/new),
-not in a public issue. A problem in the publishing action itself belongs to
-[prusa3d/plugin-marketplace-publish](https://github.com/prusa3d/plugin-marketplace-publish/security/advisories/new).
+This project follows the [Prusa Research security policy](https://www.prusa3d.com/page/security-policy_230500/).
 
-The signing key is stored only in the `release` environment, which deploys from `v*` tags and
-waits for a maintainer's approval.
+Please report a vulnerability privately to [security@prusa3d.com](mailto:security@prusa3d.com),
+not in a public issue.
