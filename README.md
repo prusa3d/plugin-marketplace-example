@@ -42,7 +42,9 @@ Copy it as the starting point for your own plugin.
    openssl rsa -pubout -in private_key.pem -out public_key.pem
    ```
 
-   Keep `private_key.pem` out of the repository (`.gitignore` already ignores `*.pem`).
+   Keep `private_key.pem` out of the repository (`.gitignore` already ignores `*.pem`) and back it
+   up somewhere safe, such as a password manager. Whoever has it can sign plugins as you; if it
+   leaks, revoke it under *Signing keys* and register a new one.
 4. **Trusted publisher.** In the author console under *Trusted publishing*, add your plugin id,
    `<owner>/<repository>`, the workflow file `release.yml` and the environment `release`. That is
    the only credential the marketplace needs: there is no password or API key to store.
