@@ -1,0 +1,25 @@
+name: Check
+# Builds and signs the bundle on every push with a throwaway key, without
+# uploading it, so a broken manifest shows up before a release does.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Throwaway signing key
+        run: |
+          openssl genpkey -algorithm RSA -out "$RUNNER_TEMP/key.pem" -pkeyopt rsa_keygen_bits:2048
+          { echo 'KEY<<EOF'; cat "$RUNNER_TEMP/key.pem"; echo 'EOF'; } >> "$GITHUB_ENV"
+      - id: bundle
+        uses: prusa3d/plugin-marketplace-publish@v1
+        with:
+          path: hello
+          private-key: ${{ env.KEY }}
+          dry-run: 'true'
+      - run: unzip -l "${{ steps.bundle.outputs.bundle }}"

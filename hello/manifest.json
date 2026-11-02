@@ -2,9 +2,10 @@
   "id": "com.prusa3d.example.hello",
   "name": "Hello Marketplace",
   "version": "0.1.0",
-  "author": "AUTHOR_ID",
+  "author": "00000000-0000-4000-8000-000000000000",
   "license": "MIT",
-  "description": "Puts a small cube with \"Hello\" embossed on top on the plate. A test plugin for publishing to the Plugin Marketplace from GitHub Actions.",
+  "description": "Puts a small cube with \"Hello\" embossed on top on the plate. An example plugin published to the Plugin Marketplace from GitHub Actions.",
+  "repo": "https://github.com/prusa3d/plugin-marketplace-example",
   "min_slicer_version": "3.0.0",
   "required_apis": { "project.plugin": "1.0.0" }
 }

@@ -4,10 +4,11 @@ on:
     types: [published]
 permissions:
   contents: read
-  id-token: write
+  id-token: write # the run proves which repository and workflow it is with an OIDC token
 jobs:
   publish:
     runs-on: ubuntu-latest
+    # environment: release # bind the trusted publisher to an environment with required reviewers
     steps:
       - uses: actions/checkout@v7
       - uses: prusa3d/plugin-marketplace-publish@v1
