@@ -8,7 +8,8 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # environment: release # bind the trusted publisher to an environment with required reviewers
+    # The signing key lives in this environment: only v* tags, and a maintainer approves each run.
+    environment: release
     steps:
       - uses: actions/checkout@v7
       - uses: prusa3d/plugin-marketplace-publish@v1
