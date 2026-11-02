@@ -28,7 +28,8 @@ Copy it as the starting point for your own plugin.
 ## Make it yours
 
 1. **Author profile.** Sign in to the [marketplace](https://plugin-marketplace.prusa3d.com) and
-   become an author. Put the author id from *Profile* into `hello/manifest.json` as `author`.
+   become an author. Put the author id from *Profile* into `hello/manifest.json` as `author`
+   (this example carries Prusa Research's).
 2. **Plugin id.** Change `id` to an id in a namespace you own: `io.github.<your-account>.<plugin>`
    works without any setup, a domain of yours (`com.example.<plugin>`) after you prove it in the
    author console under *Namespaces*. The id never changes after the first release. Ids with
