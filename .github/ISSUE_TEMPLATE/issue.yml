@@ -1,0 +1,20 @@
+name: Problem or suggestion
+description: Something in the example is wrong, unclear or missing.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository takes issues, not pull requests: describe the change and we will make it.
+        A problem in the publishing action belongs to [prusa3d/plugin-marketplace-publish](https://github.com/prusa3d/plugin-marketplace-publish/issues).
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong or missing
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: If a workflow failed in your copy of the example, the failing step's log. Remove secrets first.
+      render: text

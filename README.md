@@ -75,6 +75,12 @@ the run's summary links to it in the author console.
 For more plugins in one repository, required reviewers and all inputs, see the
 [action's README](https://github.com/prusa3d/plugin-marketplace-publish#readme).
 
+## Contributing
+
+This repository is a template, so it takes [issues](https://github.com/prusa3d/plugin-marketplace-example/issues)
+rather than pull requests. Changes to the publishing action itself are welcome in
+[prusa3d/plugin-marketplace-publish](https://github.com/prusa3d/plugin-marketplace-publish).
+
 ## License
 
 [MIT](LICENSE)

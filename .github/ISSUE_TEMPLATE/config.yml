@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://www.prusa3d.com/page/security-policy_230500/
+    about: Report it privately to security@prusa3d.com, not in an issue.
+  - name: Publishing action
+    url: https://github.com/prusa3d/plugin-marketplace-publish/issues
+    about: Bugs and ideas for prusa3d/plugin-marketplace-publish.
