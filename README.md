@@ -40,13 +40,21 @@ Copy it as the starting point for your own plugin.
    ```bash
    openssl genpkey -algorithm RSA -out private_key.pem -pkeyopt rsa_keygen_bits:2048
    openssl rsa -pubout -in private_key.pem -out public_key.pem
-   gh secret set PRUSA_SLICER_PLUGIN_MARKETPLACE_SIGNING_KEY < private_key.pem
    ```
 
    Keep `private_key.pem` out of the repository (`.gitignore` already ignores `*.pem`).
 4. **Trusted publisher.** In the author console under *Trusted publishing*, add your plugin id,
-   `<owner>/<repository>` and the workflow file `release.yml`. That is the only credential the
-   marketplace needs: there is no password or API key to store.
+   `<owner>/<repository>`, the workflow file `release.yml` and the environment `release`. That is
+   the only credential the marketplace needs: there is no password or API key to store.
+5. **Release environment.** In the repository settings, create the environment `release`, allow
+   only tags `v*` to deploy to it, add yourself as a required reviewer, and store the key there
+   instead of as a repository secret:
+
+   ```bash
+   gh secret set PRUSA_SLICER_PLUGIN_MARKETPLACE_SIGNING_KEY --env release < private_key.pem
+   ```
+
+   Then a workflow pushed on some branch cannot read the key, and every publish waits for you.
 
 ## Release
 
@@ -58,7 +66,8 @@ gh release create v0.2.0 --title "Hello Marketplace 0.2.0" --notes "Rounder cube
 gh release create v0.3.0-beta.1 --prerelease --notes "Try the new font"   # beta channel
 ```
 
-The release notes become the changelog. Every release is scanned and reviewed before it is public;
+The release notes become the changelog. The run waits until a reviewer of the `release`
+environment approves it. Every release is scanned and reviewed before it is public;
 the run's summary links to it in the author console.
 
 For more plugins in one repository, required reviewers and all inputs, see the
