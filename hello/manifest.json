@@ -1,7 +1,7 @@
 {
   "id": "com.prusa3d.example.hello",
   "name": "Hello Marketplace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "89ea361a-a28c-4daf-a7eb-434d5f3e1d18",
   "license": "MIT",
   "description": "Puts a small cube with \"Hello\" embossed on top on the plate. An example plugin published to the Plugin Marketplace from GitHub Actions.",
