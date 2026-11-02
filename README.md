@@ -6,7 +6,8 @@
 A minimal PrusaSlicer Lua plugin that publishes itself to the
 [Prusa Plugin Marketplace](https://plugin-marketplace.prusa3d.com) from GitHub Actions with
 [prusa3d/plugin-marketplace-publish](https://github.com/prusa3d/plugin-marketplace-publish).
-Copy it as the starting point for your own plugin.
+[Use this template](https://github.com/new?template_name=plugin-marketplace-example&template_owner=prusa3d)
+to start your own plugin from it.
 
 > [!NOTE]
 > The Prusa Plugin Marketplace is in beta.
@@ -26,6 +27,11 @@ Copy it as the starting point for your own plugin.
 ```
 
 ## Make it yours
+
+Click **Use this template** → **Create a new repository** (or
+`gh repo create my-plugin --template prusa3d/plugin-marketplace-example --public --clone`).
+You get the files without this repository's history, in a repository that is yours and not a
+fork, so it is the one your trusted publisher points at. Then:
 
 1. **Author profile.** Sign in to the [marketplace](https://plugin-marketplace.prusa3d.com) and
    become an author. Put the author id from *Profile* into `hello/manifest.json` as `author`
